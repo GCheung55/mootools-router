@@ -28,10 +28,10 @@ describe('Match', function(){
         expect( s.match('/lorem-ipsum') ).toBe( true );
         expect( s.match('/lorem-ipsum/') ).toBe( true );
         expect( s.match('/lorem-ipsum/dolor') ).toBe( false );
-        expect( s.match('lorem-ipsum') ).toBe( false );
+        expect( s.match('lorem-ipsum') ).toBe( true );
         expect( s.match('/123') ).toBe( true );
         expect( s.match('/123/') ).toBe( true );
-        expect( s.match('123') ).toBe( false );
+        expect( s.match('123') ).toBe( true );
         expect( s.match('123/45') ).toBe( false );
 
     });
@@ -41,7 +41,7 @@ describe('Match', function(){
         expect( s.match('lorem-ipsum') ).toBe( true );
         expect( s.match('') ).toBe( true );
         expect( s.match('lorem-ipsum/dolor') ).toBe( false );
-        expect( s.match('/lorem-ipsum/') ).toBe( false );
+        expect( s.match('/lorem-ipsum/') ).toBe( true );
 
     });
 
@@ -50,7 +50,7 @@ describe('Match', function(){
         expect( s.match('/lorem-ipsum') ).toBe( true );
         expect( s.match('/lorem-ipsum/') ).toBe( true );
         expect( s.match('/lorem-ipsum/dolor') ).toBe( true );
-        expect( s.match('123/45') ).toBe( false );
+        expect( s.match('123/45') ).toBe( true );
     });
 
     it('should work even with optional params on the middle of pattern', function(){

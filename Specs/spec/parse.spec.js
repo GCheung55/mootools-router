@@ -7,9 +7,10 @@ describe('crossroads.parse()', function(){
 
     describe('simple string route', function(){
 
-        it('shold route basic strings', function(){
+        it('should route basic strings', function(){
             var t1 = 0;
 
+            // Matches strings with and without leading slash
             crossroads.add('/foo', function(a){
                 t1++;
             });
@@ -17,7 +18,7 @@ describe('crossroads.parse()', function(){
             crossroads.parse('/foo');
             crossroads.parse('foo');
 
-            expect( t1 ).toBe( 1 );
+            expect( t1 ).toBe( 2 );
         });
 
         it('should pass params and allow multiple routes', function(){
